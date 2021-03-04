@@ -1,0 +1,21 @@
+<br>
+
+<div class="container">
+  <div class="cards">
+    <% @cocktail.doses.each do |dose| %>
+        <%= dose.description %>
+        <%= link_to "Delete", plant_path(plant), method: :delete, data: { confirm: 'Sure?'} %>
+    <% end %>
+  </div>
+
+<!--   <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit %>
+  <% end %> -->
+
+
+  <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+  <%= link_to 'Back', cocktails_path %>
+
+
+</div>
